@@ -180,6 +180,9 @@
   .stat .n.p { color: var(--purple); }
   .stat .n.g { color: var(--green); }
   .stat .l { font-size: .85rem; color: var(--muted); margin-top: 2px; }
+  .stat-link { display: block; transition: transform .2s, border-color .2s, box-shadow .2s; }
+  .stat-link:hover { transform: translateY(-2px); border-color: var(--purple); box-shadow: var(--shadow); }
+  .stat-link svg { width: 16px; height: 16px; vertical-align: 1px; opacity: .7; }
 
   /* ---------- sections ---------- */
   section.block { padding: 90px 0; }
@@ -394,7 +397,7 @@
       <div class="stats rise">
         <div class="stat"><div class="n p">~1 week → 2 hrs</div><div class="l">QA validation cycle per remediation</div></div>
         <div class="stat"><div class="n g">400+ downloads</div><div class="l">for my iOS app on the App Store</div></div>
-        <div class="stat"><div class="n p">ACM TEI '24</div><div class="l">published, co-first author</div></div>
+        <a class="stat stat-link" href="https://dl.acm.org/doi/10.1145/3623509.3635251" target="_blank" rel="noopener"><div class="n p">ACM TEI '24 <svg><use href="#i-ext"/></svg></div><div class="l">published, co-first author</div></a>
       </div>
     </div>
   </section>
