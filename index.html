@@ -387,7 +387,7 @@
       <div class="eyebrow rise"><span class="dot"></span>Open to software engineering roles</div>
       <h1 class="rise">Hi, I'm <span class="grad-text">Shivoy Arora</span>.</h1>
       <p class="role rise">Software Engineer at <b>Goldman Sachs</b> · Bengaluru, India</p>
-      <p class="lede rise">I build automated code-remediation and verification systems for production financial infrastructure, where correctness and auditability are non-negotiable. Outside work, I build robots in ROS&nbsp;2 and train transformer models.</p>
+      <p class="lede rise">I build Python tooling and Kafka Streams services for production financial systems in securities lending technology. Outside work, I build robots in ROS&nbsp;2 and train transformer models.</p>
       <div class="cta rise">
         <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Résumé</a>
         <a class="btn" href="https://github.com/arorashivoy" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
@@ -414,14 +414,14 @@
             </div>
             <div class="t-sub">Global Banking &amp; Markets · Securities lending technology · Bengaluru</div>
             <ul class="bul">
-              <li>Built an <b>automated remediation pipeline</b> that closes technology-risk findings across production applications: it locates the affected code, applies the change, and validates it end-to-end in QA with minimal human intervention.</li>
+              <li>Built a <b>Python validator</b> that verifies technology-risk remediations across <b>a dozen production Java and Spring Boot applications</b>: it confirms that each update was made correctly and validates it end-to-end in QA with minimal human intervention.</li>
               <li>Cut the <b>QA validation cycle</b> for a remediation from roughly one week to a couple of hours by replacing manual regression passes with automated test execution and result triage.</li>
-              <li>Engineered the pipeline in <b>Java and Spring Boot</b> with Python tooling, applying automated code transformation behind a verification gate so no change reaches QA unvalidated.</li>
-              <li>Deployed the pipeline across <b>a dozen production applications</b> to date.</li>
+              <li>Develop <b>Kafka Streams</b> applications that manage securities-lending data internally: change stream-processing logic and write producers, consumers and supporting tools. In production support, trace messages across topics, monitor consumer lag, replay data by resetting offsets, and repair bad or missing records.</li>
+              <li>Write the <b>Dockerfiles</b> Kubernetes builds these services' pods from, and diagnose issues with kubectl (pod logs, configuration, exec, restarts) and through failing GitLab CI pipelines.</li>
             </ul>
             <div class="tags">
               <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Python</span>
-              <span class="tag g">Apache Kafka</span><span class="tag g">IBM Db2</span><span class="tag g">Sybase</span><span class="tag">CI / test automation</span>
+              <span class="tag g">Kafka Streams</span><span class="tag g">IBM Db2</span><span class="tag g">Sybase</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitLab CI</span>
             </div>
           </div>
         </div>
@@ -586,9 +586,9 @@
         <div class="card reveal"><h3><span class="sw"></span>Languages</h3>
           <div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C / C++</span><span class="tag">SQL</span><span class="tag">Swift</span><span class="tag">Kotlin</span><span class="tag">JavaScript</span></div></div>
         <div class="card reveal"><h3><span class="sw"></span>Backend</h3>
-          <div class="tags"><span class="tag g">Spring Boot</span><span class="tag g">REST APIs</span><span class="tag g">Automated testing</span><span class="tag g">CI</span><span class="tag g">Code transformation</span></div></div>
+          <div class="tags"><span class="tag g">Spring Boot</span><span class="tag g">REST APIs</span><span class="tag g">Automated testing</span><span class="tag g">CI</span><span class="tag g">Docker</span><span class="tag g">Kubernetes</span></div></div>
         <div class="card reveal"><h3><span class="sw"></span>Data &amp; Messaging</h3>
-          <div class="tags"><span class="tag">Apache Kafka</span><span class="tag">IBM Db2</span><span class="tag">Sybase</span><span class="tag">Distributed systems</span></div></div>
+          <div class="tags"><span class="tag">Apache Kafka (Kafka Streams)</span><span class="tag">IBM Db2</span><span class="tag">Sybase</span><span class="tag">Distributed systems</span></div></div>
         <div class="card reveal"><h3><span class="sw"></span>Robotics</h3>
           <div class="tags"><span class="tag g">ROS 2</span><span class="tag g">Nav2</span><span class="tag g">SLAM</span><span class="tag g">Gazebo</span><span class="tag g">Arduino</span><span class="tag g">Raspberry Pi</span></div></div>
         <div class="card reveal"><h3><span class="sw"></span>Machine Learning</h3>
