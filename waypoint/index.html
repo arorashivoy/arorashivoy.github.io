@@ -4,35 +4,115 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Waypoint</title>
-<meta name="description" content="Waypoint is a personal, self-hosted job-search tool that tailors a CV to each posting and saves it to the owner's Google Drive.">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<meta name="description" content="Waypoint finds jobs on company career boards, checks your fit, finds a person who can refer you, and builds a CV for each role. Invite only, by Shivoy Arora.">
+<meta property="og:title" content="Waypoint">
+<meta property="og:description" content="A job search that starts with a warm introduction. Invite only.">
+<meta name="theme-color" content="#121019">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="preload" href="fonts/Syne-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <h1>Waypoint</h1>
-  <p class="sub">A personal job-search tool by <a href="https://arorashivoy.github.io/">Shivoy Arora</a>.</p>
+  <a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Waypoint</a>
 
-  <p>Waypoint runs on its owner's own computer. It collects job postings from public company career boards,
-  ranks them against the owner's profile, and builds a CV tailored to each posting.</p>
+  <h1>One warm introduction at a time.</h1>
+  <p class="lede">Waypoint finds jobs on company career boards, checks how well you fit each one, finds a person who can refer you, and builds a CV for that role. It is a small app for invited users. It runs on a Raspberry Pi in my home.</p>
+  <div class="actions">
+    <a class="btn go" href="https://waypoint.shares.zrok.io/">Open Waypoint</a>
+    <a class="btn" href="#invite">Ask for an invite</a>
+  </div>
+  <p class="note">You need an account to sign in. If the link does not open, the Pi is off for a short time. Try again later.</p>
 
-  <h2>How it uses Google</h2>
+  <h2>How it works</h2>
+  <ol class="route">
+    <li>
+      <h3>Find the jobs</h3>
+      <p>Waypoint reads the public career boards of companies (Greenhouse, Lever, Ashby, Workable and others) in the countries that you choose. You can also paste a link to one job.</p>
+    </li>
+    <li>
+      <h3>Check the fit</h3>
+      <p>Claude reads each posting and compares it with your profile. You see each requirement as met, partial or missing, the proof from your profile, and hard blockers such as a visa or a language. Waypoint also marks postings that look like spam.</p>
+    </li>
+    <li>
+      <h3>Find your way in</h3>
+      <p>Waypoint looks for a first-degree LinkedIn connection at the company, or for alumni of your school. It writes a short referral message for you to copy.</p>
+    </li>
+    <li>
+      <h3>Send a CV for the role</h3>
+      <p>Waypoint builds a one-page CV in LaTeX that leads with your most relevant work. You can ask Claude to change the order, and you see the PDF at once.</p>
+    </li>
+  </ol>
+
+  <h2>What it does not do</h2>
   <div class="card">
-    <p style="margin-top:0">Waypoint asks for one Google permission: <code>drive.file</code>. With it, Waypoint uploads each
-    tailored CV as a PDF to the owner's Google Drive and creates a share link, so the CV can be included in a
-    referral message.</p>
-    <p style="margin-bottom:0"><code>drive.file</code> only allows access to files Waypoint created itself. Waypoint cannot see,
-    read or change anything else in the Drive.</p>
+    <ul class="never">
+      <li>It does not write new facts on your CV. Each line comes from your own profile, and each claim has its proof.</li>
+      <li>It does not send messages or applications for you. It copies the text and opens the page. You press Send.</li>
+      <li>It does not use the text of a posting as instructions. A posting that tries to steer the AI gets a warning.</li>
+    </ul>
   </div>
 
-  <h2>Who can use it</h2>
-  <p>Waypoint is a single-user tool. It is not offered as a service, and it has no accounts for other people. Its
-  only Google user is its owner.</p>
+  <h2>Before you ask</h2>
+  <div class="facts">
+    <div class="card">
+      <h3>Invite only</h3>
+      <p>I make each account by hand, for friends and people I know. The app is free, and it has no ads.</p>
+    </div>
+    <div class="card">
+      <h3>Claude</h3>
+      <p>The Claude parts use your own Anthropic API key, which you add in Settings. Without a key, Waypoint still lists jobs and estimates your fit.</p>
+    </div>
+    <div class="card">
+      <h3>Your data</h3>
+      <p>Your profile and files stay in the database on the Pi. In Settings, you can download your profile as a claims.yml file, or delete your account and all its data. See the <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Phones and tablets</h3>
+      <p>Waypoint works in Safari and Chrome on a phone, a tablet and a computer. You can add it to your home screen.</p>
+    </div>
+  </div>
 
-  <p><a href="privacy.html">Privacy policy</a></p>
+  <h2 id="invite">Ask for an invite</h2>
+  <p class="soft">Fill in the form. Your mail app opens with a message to me. Press Send there. I reply with an invite link.</p>
+  <form id="invite-form" action="mailto:shivoy1183@gmail.com?subject=Waypoint%20invite%20request" method="post" enctype="text/plain">
+    <div class="two">
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email for the account<input name="email" type="email" autocomplete="email" required></label>
+    </div>
+    <label><span class="l">LinkedIn <em>(optional)</em></span><input name="linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/…"></label>
+    <label><span class="l">What do you look for? <em>(optional: roles, countries)</em></span><textarea name="note"></textarea></label>
+    <button class="btn go" type="submit">Write the request</button>
+    <p class="sent" id="sent" role="status">Your mail app has the request. Press Send there. If no mail app opened, write to <a href="mailto:shivoy1183@gmail.com">shivoy1183@gmail.com</a>.</p>
+  </form>
 
-  <footer>© 2026 Shivoy Arora</footer>
+  <footer>
+    <a href="https://github.com/arorashivoy/waypoint">Source on GitHub</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="https://arorashivoy.github.io/">Shivoy Arora</a>
+  </footer>
 </main>
+<script>
+  // Builds the mail in the visitor's own mail app. Nothing goes to a server.
+  document.getElementById('invite-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    if (!f.reportValidity()) return;
+    var v = function (n) { return f.elements[n].value.trim(); };
+    var body = [
+      'Hi Shivoy,',
+      '',
+      'Please send me an invite to Waypoint.',
+      '',
+      'Name: ' + v('name'),
+      'Email for the account: ' + v('email'),
+      v('linkedin') ? 'LinkedIn: ' + v('linkedin') : '',
+      v('note') ? '\nWhat I look for:\n' + v('note') : '',
+    ].filter(function (l, i) { return l !== '' || i < 4; }).join('\n');
+    var subject = 'Waypoint invite request from ' + v('name');
+    window.location.href = 'mailto:shivoy1183@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    document.getElementById('sent').classList.add('on');
+  });
+</script>
 </body>
 </html>

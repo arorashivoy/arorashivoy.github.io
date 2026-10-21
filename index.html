@@ -354,6 +354,7 @@
   <symbol id="i-term" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M12 15h6"/></g></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></g></symbol>
   <symbol id="i-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></g></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="2"/><circle cx="12" cy="9" r="2"/><circle cx="19" cy="5" r="2"/><path d="M6.4 16.6 10.6 10.4M13.8 8.1l3.4-2.1"/></g></symbol>
   <symbol id="i-chip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g></symbol>
 </svg>
 
@@ -453,6 +454,17 @@
         <button class="filter" data-f="mobile">Mobile &amp; apps</button>
       </div>
       <div class="grid" id="projGrid">
+
+        <article class="card proj reveal" data-c="systems">
+          <div class="proj-top">
+            <div class="proj-icon"><svg><use href="#i-route"/></svg></div>
+            <div class="proj-links"><a href="waypoint/" aria-label="About Waypoint"><svg><use href="#i-ext"/></svg></a><a href="https://github.com/arorashivoy/waypoint" target="_blank" rel="noopener" aria-label="Source on GitHub"><svg><use href="#i-gh"/></svg></a></div>
+          </div>
+          <h3><a href="waypoint/" style="color:inherit;text-decoration:none">Waypoint — Job Search by Referral</a></h3>
+          <div class="meta">2026 · personal, live</div>
+          <p>A multi-user job-search app on a Raspberry Pi. It reads company career boards, has Claude check each posting against a profile, finds a 1st-degree contact or alumnus for a referral, and builds a one-page LaTeX CV for the role. Prompt-injection guards, a job worker, and Playwright device tests.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag g">Claude API</span><span class="tag g">SQLite</span><span class="tag">LaTeX</span></div>
+        </article>
 
         <article class="card proj reveal" data-c="robotics">
           <div class="proj-top">
