@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Cutting Room</title>
+<meta name="description" content="Cutting Room is a private tool by Shivoy Arora that publishes his own short video clips to his own YouTube channel and Instagram account.">
+</head>
+<body>
+<main>
+  <a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Cutting Room</a>
+  <h1>Cutting <span>Room</span></h1>
+  <p class="lede">Cutting Room is a private dashboard. Shivoy Arora uses it to publish his own short video clips to his
+  own YouTube channel and Instagram account, and to read the statistics of those clips.</p>
+  <p>The app runs on a Raspberry Pi in his home. It has one user. It is not a public service, and it has no sign-up.</p>
+
+  <h2>What it does</h2>
+  <div class="card">
+    <ul>
+      <li>It lists the video clips in one folder on the Pi.</li>
+      <li>It suggests a title and a caption for each clip. The owner selects and edits the text.</li>
+      <li>When the owner selects Upload, it uploads the clip to his YouTube channel as a Short and to his Instagram
+      account as a Reel.</li>
+      <li>It shows the views, likes, comments and watch time of his recent videos.</li>
+    </ul>
+  </div>
+
+  <h2>How it uses Google data</h2>
+  <p>Cutting Room connects to one YouTube channel, the channel of its owner. It uses the YouTube Data API to upload
+  videos and to read the list and the statistics of the channel's videos. It uses the YouTube Analytics API to read the
+  watch time of those videos. It does not share or sell this data. The <a href="privacy.html">privacy policy</a> gives
+  the details.</p>
+
+  <h2>Contact</h2>
+  <p>Shivoy Arora, <a href="mailto:shivoy1183@gmail.com">shivoy1183@gmail.com</a>.</p>
+  <footer>
+    <a href="./">Cutting Room</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="terms.html">Terms of service</a>
+    <a href="https://arorashivoy.win/">Shivoy Arora</a>
+  </footer>
+</main>
+</body>
+</html>
